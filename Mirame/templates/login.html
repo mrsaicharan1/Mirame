@@ -1,0 +1,75 @@
+
+{%  block title  %}
+{% endblock %}
+{% block head %}
+  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1> Login Page </h1> 	
+{% endblock %}
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<style>
+.flex-container{
+display:-webkit-flex;
+display:flex;
+justify-content: center;
+width:300px;
+height:500px;
+background-color:black
+margin:auto;
+padding: 20px;
+
+}
+h1{
+	font-family: cursive;
+	display:block;	
+	color:beige	;
+	margin: 47px;
+}
+h4{
+color:salmon;
+}
+.flex-item{
+
+}
+
+
+</style>
+<script>
+var form = document.getElementById('reg');
+form.onsubmit=function(){
+if (form.email.value=="")
+{
+	alert('Email field left empty')
+}
+if(form.password.value=="")
+{
+	alert('password field has been left empty')
+}
+};
+
+</script>
+{% block body %}
+<body background="http://wallpapercave.com/wp/s2qNiKG.jpg">
+{% endblock %}
+{%block main%}
+<div class="flex-container">
+<form  action="{{url_for('login')}}" id='reg' method="post">
+   
+<br><div class="flex-item"> <h4>Email</h4> <input type="text" name="email"  placeholder="Mail"></div><br>  
+
+<br><div class="flex-item"><h4>Password</h4> <input type="password" name="password" placeholder="password"></div><br>  
+
+
+<br><input type="submit" value="submit"><br>  
+
+</form>
+
+{% endblock %}
